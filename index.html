@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="formSection">
+   <h1>Dynamic Resume Builder</h1>
+   <form onsubmit="callValue">
+       <!-- Personal Information -->
+       <div class="form-section-row">
+           <div class="personal-information">
+               <h2>Personal Information</h2>
+               <label for="name">Name:</label>
+               <input type="text" id="name" class="name" placeholder="Enter your name" required>
+               <label for="profession">Profession:</label>
+               <input type="text" id="profession" class="profession" placeholder="Enter your profession" required>
+               <label for="email">Your Email:</label>
+               <input type="email" id="email" class="email" placeholder="Enter your email" required>
+               <label for="phone">Phone Number:</label>
+               <input type="tel" id="phone" class="phone" placeholder="Enter your phone no">
+               <label for="address">Address:</label>
+               <input type="text" id="address" class="address" placeholder="Enter your address" required>
+               <label for="profilePicture">Profile Picture:</label>
+               <input type="file" id="profilePicture" class="profilePicture" accept="image/*">
+           </div>
+
+           <!-- Social Media Links -->
+           <div class="social-media-links">
+               <h2>Links</h2>
+               <label for="linkedin">LinkedIn Profile:</label>
+               <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+               <label for="github">GitHub Profile:</label>
+               <input type="url" id="github" name="github" placeholder="https://github.com/yourusername">
+               <label for="projectLink">Project Link:</label>
+               <input type="url" id="projectLink" name="projectLink" placeholder="https://github.com/yourproject">
+               <label for="facebook">Facebook Link:</label>
+               <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/yourusername">
+           </div>
+       </div>
+
+       <!-- Professional Information -->
+       <div class="summaryContainer">
+           <h2>Professional Information</h2>
+            <label for="summary">Professional Summary</label>
+           <textarea id="summary" name="summary" placeholder="Describe your professional background"></textarea>
+           <button type="button" id="addSummaryButton">Add Profession</button>
+       </div>
+
+       
+       <!-- Work Experience Section with Company Name, Start Date, and End Date -->
+        <div class="WorkContainer">
+            <label for="work-experience">Work Experience</label>
+            <div class="work-experience-entry">
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" class="companyName" placeholder="Enter company name">
+            
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" class="startDate">
+                
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" class="endDate">
+                
+                <label for="workDescription">Description:</label>
+                <textarea id="workDescription" class="workDescription" placeholder="Describe your role"></textarea>
+            </div>
+            <button type="button" id="addExperienceButton">Add Experience</button>
+        </div>
+        
+        
+        
+        <div class="skillContainer">
+            <label for="skills">Skills</label>
+            <textarea type="text" id="skills" name="skills" placeholder="List skills"></textarea>
+            <button type="button" id="addSkillButton">Add Skill</button>
+        </div>
+        
+        <div class="languageContainer">
+            <label for="languages">Languages</label>
+            <textarea type="text" id="languages" name="languages" placeholder="List languages"></textarea>
+            <button type="button" id="addLanguageButton">Add Language</button>
+        </div>
+
+           <div class="educationContainer">
+            <label for="education">Education</label>
+            <textarea id="education" name="education" placeholder="Enter your education details."></textarea>
+            <button type="button" id="addEducationButton">Add Education</button>
+        </div>
+       
+   </form>
+
+   <button type="button" id="generateCVButton">Generate CV</button>
+</div>
+   <!------------------------ Resume Dynamic ------------------->
+
+
+   <div id="cvSection" style="display: none;">
+   <div class="center-cv">
+    <div class="cv">
+       
+        <!-- Left Side -->
+   <div class="left-side">
+
+    <div class="image">
+    <img src="image.webp" alt="" id="profilePic">
+    </div>
+    
+    <div class="contact-me">
+        <div class="contact-header">
+        <h2>CONTACT ME</h2>
+    </div>
+        <div class="contact2">
+        <div class="phone-no"><i class="fa-solid fa-phone"></i><span id="phoneDisplay">03123456789</span></div>
+        <div class="emial"><i class="fa-solid fa-envelope-open"></i><span id="emailDisplay">zohakhan11004@gmail.com</span></div>
+        <div class="address"><i class="fa-solid fa-location-dot"></i><span id="addressDisplay">House No 114 Sector 4/E Board Office</span></div>
+    </div>
+</div>
+
+    <div class="links">
+        <div class="social-header">
+        <h2>SOCIAL LINKS</h2>
+       </div>
+       <div class="links2">
+        <div class="github"><i class="fa-brands fa-github"></i><a href="" id="githubDisplay" target="_blank">https://github.com/dashboard</a></div>
+        <div class="facebook"><i class="fa-brands fa-facebook-f"></i><a href="" id="facebookDisplay" target="_blank">https://www.facebook.com/</a></div>
+        <div class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="" id="linkedinDisplay" target="_blank">https://www.linkedin.com/</a></div>
+        <div class="project"><i class="fas fa-link"></i><a href="" id="projectLinkDisplay" target="_blank">https://zoha-khan-protfolio.vercel.app/</a></div>
+    </div>
+    </div>
+<!-- </div> -->
+
+    <div class="languages">
+        <div class="languages-header">
+        <h2>LANGUAGES</h2>
+      </div>
+        <ul id="languagesList"></ul>
+    </div>
+
+
+    <div id="skill">
+        <div class="skills-header">
+        <h2>SKILLS</h2>
+       </div>
+        <ul id="skillsList"></ul>
+    </div>
+</div>
+
+
+
+<!-- Right Side -->
+
+<div class="right-side">
+    <div class="name"><h1 id="nameDisplay">ZOHA KHAN</h1><p id="professionDisplay">FRONT-END DEVELOPER</p></div>
+    
+    <div class="summary">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <ul id="summaryList"></ul>
+    </div>
+
+    <div class="work-experience">
+        <h2>WORK EXPERIENCE</h2>
+        <ul id="experienceList">
+        <p><strong id="companyNameDisplay">ABC Company</strong> (<span id="startDateDisplay">Jan 2020</span> - <span id="endDateDisplay">Dec 2022</span> )</p>
+        
+    <p id="workExperienceDisplay">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, magnam sequi. Illum accusamus officia minima, quia eum necessitatibus, consequuntur, molestiae natus ipsam magni tenetur recusandae odio dicta corporis qui optio.</p>
+      
+</ul>
+    </div>
+    
+    <div class="education">
+        <h2>EDUCATION</h2>
+        <ul id="educationList">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ullam.</li>
+        </ul>
+    </div>
+    
+    
+</div>
+
+</div>
+</div>
+<button id="editButton">Edit</button>
+<button id="printButton">Print</button>
+</div>
+
+<script src="index.js" type="module"></script>
+</body>
+</html>
