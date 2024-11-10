@@ -11,16 +11,15 @@
 body {
     font-family: "Poppins", serif;
     color: #333;
-    line-height: 1.6;
-    padding: 20px;
 }
 
 
 /* Main Header */
-h1 {
+#formSection h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0px;
     font-size:2.3rem;
+    background-color: #9f5656;
 }
 
 /* Form Section Container */
@@ -47,9 +46,9 @@ form {
 }
 
 /* Section Title */
-h2 {
+.form-section-row h2 {
     font-size:1.5rem;
-    margin-bottom: 10px;
+    margin-bottom:30px;
     color:rgb(41, 41, 41);
 }
 
@@ -159,21 +158,9 @@ input, textarea {
     margin-left: auto;
     margin-right: auto;
 }
-.cv-button{
-    display: flex;
-    flex-direction: column;
-   gap:1rem;
-    /* justify-content: center;
-    align-items: center;
-    gap:0; */
-}
-.cv-button button{
-   background-color: #2f2f2f;
-   padding:15px;
-   width: 200px;
-   font-size: 20px;
-   letter-spacing: 2px;
-}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .form-section-row {
@@ -185,7 +172,7 @@ input, textarea {
         font-size: 2rem;
     }
     h2{
-        font-size:1rem;
+        font-size:1.1rem;
     }
 
     .personal-information, .social-media-links {
@@ -193,7 +180,7 @@ input, textarea {
         padding:0px;
     }
     input[type="file"],input[type="url"]{
-        font-size:small;
+        font-size:13px;
     }
     input[type="url"]{
        font-size:x-small;
@@ -205,36 +192,32 @@ input, textarea {
     button{
         margin-bottom:2rem;
     }
+    .social-media-links{
+        margin:0px;
+    }
 }
 
 
-/* ------------- Resume Dynamic -------------------- */
-/* Main Container */
-/* Only apply background color to the CV section */
-/* .show-cv {
-    background-color: #e1e0e0;
-} */
-
+/* Resume Layout */
 .center-cv {
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    padding: 1rem;
+    padding: 10px;
     box-sizing: border-box;
 }
 
-/* General Flex Layout */
+/* Flex Layout */
 .cv {
     display: flex;
     flex-wrap: wrap;
+    page-break-inside: avoid;
 }
 
-/* Left Side */
+/* Left Section */
 .left-side {
     width: 35%;
     background-color: #f7f7f7;
-    padding: 1rem;
-    box-sizing: border-box;
 }
 
 .image {
@@ -245,174 +228,230 @@ input, textarea {
 
 .image img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-top: 2rem;
+    width: 120px;
+    height: 120px;
+    margin-top: 1.5rem;
 }
 
-/* Section Headers */
-.contact-header, .social-header, .languages-header, .skills-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0rem 1rem 0rem;
-}
-
+/* Centered Section Headers on Left Side */
 .contact-header h2, .social-header h2, .languages-header h2, .skills-header h2 {
     background-color: #434542;
     color: white;
-    padding: 10px;
-    width: 200px;
-    border-radius: 20px;
-    font-size: 20px;
+    padding: 8px;
+    width: 180px;
+    font-size: 0.85rem;
     text-align: center;
-    letter-spacing: 2px;
+    margin: 0 auto 10px; /* Centers and reduces space */
 }
 
 /* Contact and Links */
 .contact2, .links2, ul {
-    margin-top: 1rem;
     width: 80%;
-    margin: auto;
-}
-
-.contact2 i, .links2 i {
-    color: #42433e;
-}
-
-.phone-no, .emial, .address, .github, .facebook, .linkedin, .project, ul li {
-    display: flex;
-    padding: 10px;
-    gap: 10px;
+    margin: 1rem auto;
 }
 
 .phone-no span, .emial span, .address span {
-    font-size: 15px;
+    font-size: 13px;
 }
 
-.links2 a {
+/* Setting Links to Black */
+a {
     color: black;
+    text-decoration: none;
 }
 
-/* Right Side */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Right Section */
 .right-side {
     width: 65%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    box-sizing: border-box;
-    background-color: #ffffff;
-}
-
-.right-side .name {
-    margin: 2rem 0;
-    text-align: center;
+    background-color: #9f5656;
+    padding: 10px;
+    font-size: 0.95rem; /* Reduced font size */
 }
 
 .right-side .name h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 40px;
+    font-size: 1.8rem;
     color: #2f2f2f;
-    letter-spacing: 1px;
-    font-weight: bolder;
-}
-
-.right-side .name p {
-    font-size: large;
-}
-
-.work-experience, .professional-summary, .education {
-    max-height: fit-content;
+    text-align: center;
 }
 
 .right-side h2 {
-    font-size: 25px;
-    font-weight: 800;
+    font-size: 1.1rem;
     color: #302e2f;
-    letter-spacing: 1px;
-    margin: 20px 0rem 5px 20px;
-}
-
-.right-side p {
-    line-height: 1.5;
-    padding-top: 10px;
-    margin: 0 2rem 1rem 2rem;
+    margin: 5px 0; /* Reduced margin */
 }
 
 .right-side ul {
-    padding-left: 20px;
-    margin: 0;
-    width: 100%;
+    padding-left: 15px;
+    margin: 5px 0; /* Reduced space for list items */
 }
 
-.right-side li {
-    padding-top: 2px;
-    width: 100%;
+.right-side ul li {
+    margin-bottom: 5px; /* Reduced margin between list items */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+.cv-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cv-button button{
+    background-color: #2f2f2f;
+    padding: 15px;
+    width: 200px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 2rem 0rem;
+}
+
+.cv-button button:hover{
+    transform: scale(1.05); 
+}
+
+/* Print Styling */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+    
+    /* Centering everything on one page */
     .cv {
-        flex-direction: column;
+        flex-direction: row;
+    }
+    
+    /* Prevent page break inside main sections */
+    .left-side, .right-side {
+        page-break-inside: avoid;
+    }
+    
+    .center-cv {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    /* Hiding non-printable elements */
+    .form-section-row, .button-row {
+        display: none;
+    }
+    
+    /* Adjusting Layout for Print */
+    .left-side {
+        width: 40%;
+    }
+    
+    .right-side {
+        width: 60%;
+        padding: 10px;
+    }
+}
+
+/* Responsive Styling for screens 800px or smaller */
+@media (max-width: 800px) {
+    .cv {
+        flex-direction: column; /* Stack sections vertically */
     }
 
+    /* Adjust image size for smaller screens */
+    .image img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Left and right sections take full width on small screens */
     .left-side, .right-side {
+        width: 100%;  /* Ensure they take the full width on smaller screens */
+    }
+
+    /* Make the section headers full width */
+    .contact-header h2, .social-header h2, .languages-header h2, .skills-header h2 {
         width: 100%;
     }
 
-    .center-cv {
-        padding: 0.5rem;
+    /* Reduce button size for smaller screens */
+    .cv-button button {
+        width: 150px;
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+/* Print Styling */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+    
+    /* Center everything on one page */
+    .cv {
+        flex-direction: row;
+        width: 100%;
+        page-break-inside: avoid;
     }
 
-    .right-side .name h1 {
-        font-size: 30px;
+    /* Prevent page break inside main sections */
+    .left-side, .right-side {
+        page-break-inside: avoid;
+    }
+
+    .center-cv {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Hiding non-printable elements */
+    .form-section-row, .button-row {
+        display: none;
+    }
+
+    /* Adjust layout for print */
+    .left-side {
+        width: 40%;
+        padding: 10px;
+    }
+    
+    .right-side {
+        width: 60%;
+        padding: 10px;
+    }
+
+    /* Adjust font size and margins to fit on one page */
+    .right-side, .left-side {
+        font-size: 0.9rem;  /* Smaller font size */
+    }
+    
+    /* Prevent excessive spacing and margin to ensure content fits */
+    .cv .contact-header, .cv .social-header, .cv .languages-header, .cv .skills-header {
+        margin: 0;
+        padding: 5px 0;
+        width: 100%;
+    }
+
+    
+    }
+   
+    .left-side, .right-side {
+        page-break-inside: avoid;
     }
 
     .image img {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
     }
 
-    .contact-header h2, .social-header h2, .languages-header h2, .skills-header h2 {
-        font-size: 18px;
-        width: 80%;
+    .cv {
+        max-width: 100%;
     }
 
-    .right-side h2 {
-        font-size: 22px;
-        margin: 10px 0 5px 10px;
-    }
 
-    .right-side p {
-        margin: 0 1rem 1rem 1rem;
+    .cv {
+        width: 100%;
     }
-}
-
-@media (max-width: 480px) {
-    .center-cv {
-        margin-top: 1rem;
-    }
-
-    .right-side .name h1 {
-        font-size: 24px;
-    }
-
-    .contact-header h2, .social-header h2, .languages-header h2, .skills-header h2 {
-        font-size: 16px;
-        width: 90%;
-    }
-
-    .left-side, .right-side {
-        padding: 0.5rem;
-    }
-
-    .phone-no span, .emial span, .address span {
-        font-size: 13px;
-    }
-
-    .right-side h2 {
-        font-size: 20px;
-        margin: 10px 0 5px 10px;
-    }
-}
