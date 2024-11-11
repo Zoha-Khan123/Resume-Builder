@@ -40,7 +40,7 @@ form {
 
 .form-section-row h2,
 .summaryContainer h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 30px;
   color: rgb(41, 41, 41);
 }
@@ -180,6 +180,8 @@ textarea {
   }
   button {
     margin-bottom: 2rem;
+    padding: 8px 20px;
+    font-size: 15px;
   }
   .social-media-links {
     margin: 0px;
@@ -191,8 +193,10 @@ textarea {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  padding: 10px;
   box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
 }
 
 .cv {
@@ -233,12 +237,17 @@ textarea {
 }
 
 .contact2,
-.links2,
-ul {
+.links2 {
   width: 80%;
   margin: 0rem auto 1rem auto;
 }
-
+.languages-list,
+.skills-list {
+  margin: 0rem auto 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .phone-no span,
 .emial span,
 .address span {
@@ -266,15 +275,20 @@ a:hover {
 
 .right-side .name h1,
 #professionDisplay {
-  font-size: 1.8rem;
-  color: #2f2f2f;
+  font-size: 3rem;
+  color: #3b3b3b;
   text-align: center;
 }
 
 .right-side h2 {
-  font-size: 1.1rem;
-  color: #302e2f;
-  margin: 5px 0;
+  color: #fffcfd;
+  margin: 30px 0px 10px 0px;
+  background-color: #3b3b3b;
+  padding: 5px;
+  font-size: larger;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding-left: 2rem;
 }
 
 #professionDisplay {
@@ -371,7 +385,10 @@ a:hover {
   .skills-header h2 {
     width: 50%;
   }
-
+  .contact2,
+  .links2 {
+    text-align: center;
+  }
   .cv-button button {
     width: 150px;
     font-size: 16px;
@@ -425,7 +442,10 @@ a:hover {
     width: 40%;
     padding: 10px;
   }
-
+  .contact2,
+  .links2 {
+    text-align: center;
+  }
   .right-side {
     width: 60%;
     padding: 10px;
