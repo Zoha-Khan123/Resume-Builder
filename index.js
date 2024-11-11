@@ -1,7 +1,7 @@
 // Selecting elements
 
 //Profile Pic
-const picDisplay = document.getElementById("picDisplay");
+const picDisplay = document.getElementById("profilePic");
 const profilePicture = document.getElementById("profilePicture");
 
 //Personal Information
@@ -108,6 +108,7 @@ function validatePhone(phone) {
 
 // Function to generate CV with validation
 function generateCV() {
+  
   // Reset previous validation indicators
   const allImportantFields = document.querySelectorAll(".important");
   allImportantFields.forEach((field) => {
